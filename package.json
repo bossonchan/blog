@@ -1,0 +1,32 @@
+{
+  "name": "blog",
+  "version": "0.0.0",
+  "description": "BossonChan's Blog System",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha -R spec test",
+    "install": "npm run front-end",
+    "front-end": "npm run front-end:jade && npm run front-end:static",
+    "front-end:jade": "cp -r node_modules/front-end-practice/src/jade views",
+    "front-end:static": "cp -r node_modules/front-end-practice/bin public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bossonchan/blog.git"
+  },
+  "author": "Shin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bossonchan/blog/issues"
+  },
+  "homepage": "https://github.com/bossonchan/blog",
+  "dependencies": {
+    "async": "^0.9.0",
+    "body-parser": "^1.10.1",
+    "config": "^1.10.0",
+    "express": "^4.11.0",
+    "express-session": "^1.10.1",
+    "front-end": "git+ssh://git@github.com:bossonchan/front-end-practice.git",
+    "jade": "^1.9.1"
+  }
+}
