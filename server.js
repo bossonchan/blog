@@ -3,6 +3,7 @@ var config  = require("config");
 var app     = express();
 
 function configure() {
+  require("./appConfig/mongooo")(app);
   require("./appConfig/express")(app);
 }
 
@@ -19,4 +20,5 @@ exports.start = function() {
 };
 
 exports.stop  = function() {
+  process.exit(0);
 };

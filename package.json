@@ -27,6 +27,7 @@
     "express": "^4.11.0",
     "express-session": "^1.10.1",
     "front-end": "git+ssh://git@github.com:bossonchan/front-end-practice.git",
+    "mongooo": "git+ssh://git@github.com:bossonchan/mongooo.git",
     "jade": "^1.9.1"
   }
 }

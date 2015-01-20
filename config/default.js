@@ -12,3 +12,9 @@ config.session = {
   saveUninitialized: false
 };
 
+config.mongooo = {
+  mongodb: {
+    url: "mongodb://localhost:27017",
+    db : "blog_test"
+  }
+};
