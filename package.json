@@ -7,8 +7,8 @@
     "test": "mocha -R spec test",
     "install": "npm run front-end",
     "front-end": "npm run front-end:jade && npm run front-end:static",
-    "front-end:jade": "cp -r node_modules/front-end-practice/src/jade views",
-    "front-end:static": "cp -r node_modules/front-end-practice/bin public"
+    "front-end:jade": "rm -rf views && cp -r node_modules/front-end-practice/src/jade views",
+    "front-end:static": "rm -rf public && cp -r node_modules/front-end-practice/bin public"
   },
   "repository": {
     "type": "git",
