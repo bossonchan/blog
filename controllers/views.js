@@ -1,6 +1,7 @@
 exports.home = function(req, res, next) {
   res.render("index", {
     page           : "home",
+    user           : req.session.user,
     postsCount     : 30,
     pagesCount     : 5,
     pageNumber     : 1,
@@ -9,18 +10,20 @@ exports.home = function(req, res, next) {
     posts          : [{
       title : "如何写好Nodejs系列（一）：模块化",
       content: "模块化思想是一个在软件工程上被认可的方法论，分而治之是我们解决复杂性的唯一方式。同样，当我们在编写一个nodejs程序时，我们也要遵循同样的规则来编写",
-      pictures: ["http://img1.imgtn.bdimg.com/it/u=672733863,929272546&fm=21&gp=0.jpg"],
+      pictures: ["http://images.51cto.com/files/uploadimg/20120712/102244253.jpg"],
       url : "/post"
     }],
     latestComments : [],
     tags           : ["PHP", "Nodejs", "Javascript", "设计", "生活", "前端", "吉他", "羽毛球"],
     archives       : [2013, 2014, 2015]
-  });
-};
+  })
+}
 
 exports.post = function(req, res, next) {
   res.render("post", {
     page: "post",
+    user: req.session.user,
+
     post: {
       title: "如何写好Nodejs系列（一）：模块化",
       createTime: "2015-01-22",
@@ -42,25 +45,29 @@ exports.post = function(req, res, next) {
       title: "如何写好Nodejs系列（二）：深入理解异步IO",
       url  : "/post"
     }
-  });
-};
+  })
+}
 
 exports.about = function(req, res, next) {
   res.render("about", {
-    page : "about"
-  });
-};
+    page : "about",
+    user: req.session.user
+  })
+}
 
 exports.signin = function(req, res, next) {
+  if (req.session.user) return res.redirect('/')
   res.render("signin", {
     page         : "signin",
+    user         : req.session.user,
     loginUrl     : "/signin",
-    errorMessage : ""
-  });
-};
+    errorMessage : req.errorMessage || ""
+  })
+}
 
 exports.error = function(req, res, next) {
   res.render("error", {
-    page : "error"
-  });
-};
+    page : "error",
+    user : req.session.user
+  })
+}

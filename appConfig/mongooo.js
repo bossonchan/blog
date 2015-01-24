@@ -1,5 +1,6 @@
-var config = require("config");
+var config = require("config")
 
 module.exports = function(app) {
-  require("mongooo").config(config.mongooo);
-};
+  var mongooo = require("mongooo")
+  mongooo.config(config.mongooo)
+}
